@@ -19,8 +19,9 @@ namespace Tdp.GeospatialConverter.Svc
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             var serviceConfiguration = LocalConfigurationBuilder.Builder();
-            
-            builder.RegisterInstance(serviceConfiguration);
+
+            builder.RegisterInstance(serviceConfiguration).SingleInstance();
+            builder.RegisterType<GdalHelpers>().SingleInstance();
 
             builder.RegisterType<GeospatialConvertingHandler>().As<IGeospatialConvertingHandler>().InstancePerLifetimeScope();
             builder.RegisterType<GeoConvertingHandler>().As<IGeoConvertingHandler>().InstancePerLifetimeScope();
