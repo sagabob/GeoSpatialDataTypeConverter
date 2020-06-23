@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using NLog;
+using Tdp.GeospatialConverter.Svc.Config;
 using Tdp.GeospatialConverter.Svc.Handlers;
 
 namespace Tdp.GeospatialConverter.Svc.Controllers
@@ -15,11 +16,12 @@ namespace Tdp.GeospatialConverter.Svc.Controllers
     {
         private readonly IGeoConvertingHandler _convertingHandler;
         private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly GeoServiceConfiguration _serviceConfiguration;
 
-
-        public UploadController(IGeoConvertingHandler convertingHandler)
+        public UploadController(IGeoConvertingHandler convertingHandler, GeoServiceConfiguration serviceConfiguration)
         {
             _convertingHandler = convertingHandler;
+            _serviceConfiguration = serviceConfiguration;
         }
 
         [HttpPost]
@@ -29,9 +31,8 @@ namespace Tdp.GeospatialConverter.Svc.Controllers
             // Check if the request contains multipart/form-data.
             if (!Request.Content.IsMimeMultipartContent())
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
-
-            var localPath = @"~\App_Data";
-            var root = HttpContext.Current.Server.MapPath(localPath);
+            
+            var root = _serviceConfiguration.SavedDataPath;
             var provider = new MultipartFormDataStreamProvider(root);
 
             try
@@ -55,13 +56,13 @@ namespace Tdp.GeospatialConverter.Svc.Controllers
                     parameterDic.Add(key, val);
                 }
 
-                var zipFile = _convertingHandler.ConvertingPreprocessor(uploadedFiles, parameterDic, root);
-                
+                var zipFile = _convertingHandler.ConvertingPreprocessor(uploadedFiles, parameterDic, _serviceConfiguration.LocalDataPath);
+
                 var response = new HttpResponseMessage(HttpStatusCode.OK);
-                var stream = new System.IO.FileStream(zipFile, System.IO.FileMode.Open);
+                var stream = new FileStream(zipFile, FileMode.Open);
                 response.Content = new StreamContent(stream);
                 //response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
-                response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment")
+                response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
                 {
                     FileName = "output.zip"
                 };

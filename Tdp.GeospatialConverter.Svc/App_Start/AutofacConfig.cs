@@ -1,9 +1,11 @@
-﻿using System.Reflection;
+﻿using System.Configuration;
+using System.Reflection;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using Tdp.GeospatialConverter.Application.Handlers;
 using Tdp.GeospatialConverter.Application.Helpers;
+using Tdp.GeospatialConverter.Svc.Config;
 using Tdp.GeospatialConverter.Svc.Handlers;
 
 namespace Tdp.GeospatialConverter.Svc
@@ -16,8 +18,9 @@ namespace Tdp.GeospatialConverter.Svc
            
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-
-            builder.RegisterType<GdalHelpers>().SingleInstance();
+            var serviceConfiguration = LocalConfigurationBuilder.Builder();
+            
+            builder.RegisterInstance(serviceConfiguration);
 
             builder.RegisterType<GeospatialConvertingHandler>().As<IGeospatialConvertingHandler>().InstancePerLifetimeScope();
             builder.RegisterType<GeoConvertingHandler>().As<IGeoConvertingHandler>().InstancePerLifetimeScope();
