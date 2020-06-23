@@ -1,0 +1,2 @@
+2020-06-22 17:54:35.0072|DEBUG|Tdp.GeospatialConverter.Svc.Controllers.UploadController|Upload file D:\@Workspace\+) AzureDevOps\@Backend\Dev\@Round2\GeoSpatialDataConverter_Solution\Tdp.GeospatialConverter.Svc\App_Data\BodyPart_b0fff925-6134-4cde-8643-974cec945a02
+2020-06-22 20:25:11.4406|DEBUG|Tdp.GeospatialConverter.Svc.Controllers.UploadController|Upload file D:\@Workspace\+) AzureDevOps\@Backend\Dev\@Round2\GeoSpatialDataConverter_Solution\Tdp.GeospatialConverter.Svc\App_Data\BodyPart_dec54181-0dd1-4fae-b9b4-02ead47a23ee
