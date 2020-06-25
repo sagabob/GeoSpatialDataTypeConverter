@@ -7,4 +7,4 @@
 Scenario: Show the correct page title
 	Given The page url	
 	When I access the page
-	Then the result should be "Geospatial Data Converter" on the screen
+	Then the result should be 'Geospatial Data Converter' on the screen

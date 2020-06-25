@@ -25,8 +25,8 @@ namespace Tdp.GeospatialConverter.Specs
             _driver.Navigate().GoToUrl(_url);
         }
 
-        [Then(@"the result should be (.*) on the screen")]
-        public void ThenTheResultShouldBeOnTheScreen(int p0)
+        [Then(@"the result should be 'Geospatial Data Converter' on the screen")]
+        public void ThenTheResultShouldShowTheTitleOnTheScreen()
         {
             var title = _driver.Title;
             title.Should().Be("Geospatial Data Converter");
