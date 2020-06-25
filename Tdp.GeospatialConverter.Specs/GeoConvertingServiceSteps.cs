@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 
 namespace Tdp.GeospatialConverter.Specs
@@ -11,7 +12,7 @@ namespace Tdp.GeospatialConverter.Specs
         private string _url;
         private IWebDriver _driver;
 
-        [Given(@"The page url")]
+        [Given(@"The page url & the browser")]
         public void GivenThePageUrl()
         {
             _url = "https://tdp-techground.info/GeoConvertingService";
@@ -31,5 +32,16 @@ namespace Tdp.GeospatialConverter.Specs
             var title = _driver.Title;
             title.Should().Be("Geospatial Data Converter");
         }
+
+        [When(@"I access the page And I select KML option")]
+        public void WhenIAccessThePageAndISelectKmlOption()
+        {
+            SelectElement se = new SelectElement(_driver.FindElement(By.Id("inputformat")));
+
+            se.SelectByValue("KML");
+
+            se.AllSelectedOptions[0].Text.Should().Be("KML");
+        }
+
     }
 }
