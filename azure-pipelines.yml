@@ -25,7 +25,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '**\Tdp.GeospatialConverter.Svc.csproj'
-    msbuildArgs: '/p:PublishProfile=CI'
+    msbuildArgs: '/p:DeployOnBuild=true /p:PublishProfile=CI'
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)\Build'
