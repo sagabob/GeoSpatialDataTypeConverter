@@ -24,16 +24,5 @@ steps:
 
 - task: VSBuild@1
   inputs:
-    solution: '**\*.sln'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      **\*specs*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
+    solution: '**\Tdp.GeospatialConverter.Svc.csproj'
+    msbuildArgs: '/p:DeployOnBuild=true /p:PublishProfile=Test'
