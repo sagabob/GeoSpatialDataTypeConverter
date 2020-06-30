@@ -26,7 +26,13 @@ steps:
   inputs:
     solution: '**\Tdp.GeospatialConverter.Svc.csproj'
     msbuildArgs: '/p:DeployOnBuild=true /p:PublishProfile=CI'
-     
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)\Lib\gdal'
+    Contents: '**'
+    TargetFolder: '$(Build.SourcesDirectory)\Build\WebApp\bin\gdal'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)\Build'
