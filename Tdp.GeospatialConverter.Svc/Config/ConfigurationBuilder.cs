@@ -9,6 +9,7 @@ namespace Tdp.GeospatialConverter.Svc.Config
         {
             var savedDataPath = ConfigurationManager.AppSettings["SavedDataPath"];
             var localDataPath = ConfigurationManager.AppSettings["LocalDataPath"];
+            var buildNumber = ConfigurationManager.AppSettings["BuildNumber"];
 
             if (string.IsNullOrEmpty(savedDataPath) || !Directory.Exists(savedDataPath))
                 throw new InvalidConfigurationException("SavedDataPath");
@@ -16,11 +17,13 @@ namespace Tdp.GeospatialConverter.Svc.Config
             if (string.IsNullOrEmpty(localDataPath) || !Directory.Exists(localDataPath))
                 throw new InvalidConfigurationException("LocalDataPath");
 
+           
 
             return new GeoServiceConfiguration
             {
                 SavedDataPath = savedDataPath,
-                LocalDataPath = localDataPath
+                LocalDataPath = localDataPath,
+                BuildNumber = buildNumber
             };
         }
     }
