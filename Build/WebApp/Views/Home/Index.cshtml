@@ -1,0 +1,36 @@
+﻿
+
+@{
+    ViewBag.Title = "Geospatial Converting Service";
+}
+
+<div>
+    <form name="form1" method="post" action="api/upload/complexpost" enctype="multipart/form-data">
+        <div>
+            <input id="UploadFile" type="file" name="UploadFile" />
+        </div>
+
+        <br />
+        <div class="input-field col s6">
+            <select id="inputformat" name="inputformat">
+                <option value="1">GeoJson</option>
+                <option value="2">KML</option>
+                <option value="3">GML</option>
+            </select>
+            <label>Input data format</label>
+        </div>
+        <br />
+        <div class="input-field col s6">
+            <select id="outputformat" name="outputformat">
+                <option value="2">KML</option>
+                <option value="3">GML</option>
+                <option value="1">GeoJson</option>
+            </select>
+            <label>Output data format</label>
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Upload" id="submitBtn" />
+        </div>
+    </form>
+</div>
