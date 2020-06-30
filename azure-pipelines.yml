@@ -63,6 +63,7 @@ steps:
     TargetFolder: '$(Build.SourcesDirectory)\Build\Specs'
 
 - task: ArchiveFiles@2
+  displayName: Build zip file of all post build output  
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)\Build'
     includeRootFolder: true
