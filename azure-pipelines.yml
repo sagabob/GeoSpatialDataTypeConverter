@@ -18,16 +18,19 @@ steps:
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
+  displayName: Restore nuget
   inputs:
     restoreSolution: '$(solution)'
     
 - task: VSBuild@1
+  displayName: Build solution
   inputs:
     solution: '**\*.sln'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
+  displayName: Unit testing
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
@@ -38,12 +41,14 @@ steps:
 
 
 - task: VSBuild@1
+  displayName: Publish web app 
   inputs:
     solution: '**\Tdp.GeospatialConverter.Svc.csproj'
     msbuildArgs: '/p:DeployOnBuild=true /p:PublishProfile=CI'
 
 
 - task: CopyFiles@2
+  displayName: Copy Gdal library
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)\Lib\gdal'
     Contents: '**'
