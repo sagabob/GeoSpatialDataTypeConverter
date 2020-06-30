@@ -26,3 +26,9 @@ steps:
   inputs:
     solution: '**\Tdp.GeospatialConverter.Svc.csproj'
     msbuildArgs: '/p:PublishProfile=CI'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)\Build'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
