@@ -1,14 +1,15 @@
-﻿using System.Web.Mvc;
-using Tdp.GeospatialConverter.Svc.Config;
+﻿using System.Configuration;
+using System.Web.Mvc;
 
 namespace Tdp.GeospatialConverter.Svc.Controllers
 {
     public class HomeController : Controller
     {
-      // GET: Home
-        public ActionResult Index(GeoServiceConfiguration serviceConfiguration)
+        // GET: Home
+        public ActionResult Index()
         {
-            ViewBag.BuildNumber = serviceConfiguration.BuildNumber;
+            ViewBag.BuildNumber = ConfigurationManager.AppSettings["BuildNumber"];
+           
 
             return View();
         }
