@@ -29,6 +29,7 @@ namespace Tdp.GeospatialConverter.Svc.Handlers
         {
             try
             {
+                
                 var inputFormatValue = parameters[InputConvertingParameters.InputFormat];
 
                 var outputFormatValue = parameters[InputConvertingParameters.OutputFormat];
@@ -52,7 +53,14 @@ namespace Tdp.GeospatialConverter.Svc.Handlers
                         outputFileNames.Add(outputFileName);
                 }
 
-                return _zippingHandler.Zipping(outputFileNames, folderPath);
+
+                if (inputFileNames.Count == outputFileNames.Count)
+                    return _zippingHandler.Zipping(outputFileNames, folderPath);
+                else
+                {
+                    _logger.Error($"Exception in converting one of input fiels");
+                    return null;
+                }
             }
             catch (Exception ex)
             {

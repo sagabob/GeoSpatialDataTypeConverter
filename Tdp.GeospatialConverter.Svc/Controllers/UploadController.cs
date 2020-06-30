@@ -58,15 +58,20 @@ namespace Tdp.GeospatialConverter.Svc.Controllers
 
                 var zipFile = _convertingHandler.ConvertingPreprocessor(uploadedFiles, parameterDic, _serviceConfiguration.LocalDataPath);
 
+                if (zipFile == null)
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "");
+                
+
                 var response = new HttpResponseMessage(HttpStatusCode.OK);
                 var stream = new FileStream(zipFile, FileMode.Open);
                 response.Content = new StreamContent(stream);
-                //response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+               
                 response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
                 {
                     FileName = "output.zip"
                 };
                 response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/zip");
+
                 return response;
             }
             catch (Exception e)
