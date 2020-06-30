@@ -25,4 +25,4 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '**\Tdp.GeospatialConverter.Svc.csproj'
-    msbuildArgs: '/p:DeployOnBuild=true /p:PublishProfile=Test'
+    msbuildArgs: '/p:PublishProfile=CI'
