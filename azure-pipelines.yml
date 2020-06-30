@@ -26,7 +26,12 @@ steps:
   inputs:
     solution: '**\Tdp.GeospatialConverter.Svc.csproj'
     msbuildArgs: '/p:PublishProfile=CI'
-
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)\Build'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\Build'
+    CleanTargetFolder: true
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)\Build'
