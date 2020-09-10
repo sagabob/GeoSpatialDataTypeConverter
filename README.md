@@ -51,7 +51,7 @@ The application will be extended with the following features
 * For CI: The application is built with Azure DevOps.<br/>
 [![Build Status](https://dev.azure.com/bobpham-tdp-saga/BDD%20Explore/_apis/build/status/sagabob.GeoSpatialDataTypeConvertingService?branchName=master)](https://dev.azure.com/bobpham-tdp-saga/BDD%20Explore/_build/latest?definitionId=40&branchName=master)
 
-* For CD: The artifact is deployed to a virtual machine.<br/>
+* For CD: The artifact is deployed to a virtual machine (it could be offline for maintenance purpose). Here is the [link](https://tdp-techground.info/GeoConvertingService/)<br/>
 [![Deployment Status](https://vsrm.dev.azure.com/bobpham-tdp-saga/_apis/public/Release/badge/9161e2a4-d5f6-46ef-a68d-cd6476177f86/1/1)](https://vsrm.dev.azure.com/bobpham-tdp-saga/_apis/public/Release/badge/9161e2a4-d5f6-46ef-a68d-cd6476177f86/1/1)<br/>
 
 
