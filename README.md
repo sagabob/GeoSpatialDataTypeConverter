@@ -9,7 +9,7 @@
 
   <h3 align="center">Tdp Netflix Clone App</h3>
   <p align="center">
-    A simple clone of Netflix Website    
+    A simple geospatial converting service   
     <br />
     <a href="https://tdp-techground.info/GeoConvertingService/" target="_blank">View Demo</a>  
   </p>
@@ -43,6 +43,7 @@ The application is using:
 
 ## Roadmap
 The application will be extended with the following features
+* Add form validation
 * Allow to upload multiple files.
 
 
@@ -57,7 +58,7 @@ The application will be extended with the following features
 ## Contact
 [![LinkedIn][linkedin-shield]][linkedin-url]<br/>
 Bob Pham - bobpham.tdp@gmail.com<br/>
-Project Link: [https://github.com/sagabob/ReactNetflixApp](https://github.com/sagabob/ReactNetflixApp)
+Project Link: [https://github.com/sagabob/GeoSpatialDataTypeConvertingServic](https://github.com/sagabob/GeoSpatialDataTypeConvertingServic)
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/bob-pham-93937973/
