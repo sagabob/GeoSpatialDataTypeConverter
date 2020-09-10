@@ -28,28 +28,24 @@
 * [Contact](#contact)
 
 ## About the project
-This project creates a converting service that converts geojson into gml, kml (Google Earth format) and another way around. 
+This project creates a converting service that converts uploaded geojson file into gml, kml (Google Earth format) and another way around. 
 
 ## Built With
 The application is using:
 * Gdal library
 * Materializecss
+* Specflow for Behavior Testing
 
 
 ## Getting Started
-### Prerequisites
-The application requires a Firebase account for deployment. 
-
 ### Installation
 1. Clone the repo
 2. Restore solution
 
 ## Roadmap
 The application will be extended with the following features
-* Add sliding function for row (able to go from the last item back to the first).
-* Row item should show detail when clicked
-* Add preview clip on row item when hovered
-* Redesign row item so it can be more compact (similar to the one from https://www.animelab.com/).
+* Allow to upload multiple files.
+
 
 ## Continuous Development Delivery
 * For CI: The application is built with Azure DevOps.<br/>
