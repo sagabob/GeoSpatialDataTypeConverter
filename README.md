@@ -21,7 +21,6 @@
 * [About the Project](#about-the-project)
 * [Built with](#built-with)
 * [Getting Started](#getting-started)
-  * [Prerequisites](#Prerequisites)
   * [Installation](#Installation)
 * [CI/CD](#continuous-development-delivery)
 * [Roadmap](#roadmap)
