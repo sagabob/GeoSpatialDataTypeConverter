@@ -58,7 +58,7 @@ The application will be extended with the following features
 ## Contact
 [![LinkedIn][linkedin-shield]][linkedin-url]<br/>
 Bob Pham - bobpham.tdp@gmail.com<br/>
-Project Link: [https://github.com/sagabob/GeoSpatialDataTypeConvertingServic](https://github.com/sagabob/GeoSpatialDataTypeConvertingServic)
+Project Link: [https://github.com/sagabob/GeoSpatialDataTypeConvertingService](https://github.com/sagabob/GeoSpatialDataTypeConvertingService)
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/bob-pham-93937973/
