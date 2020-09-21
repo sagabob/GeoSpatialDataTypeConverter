@@ -7,7 +7,7 @@
     <img src="https://i.ibb.co/gb2tf3s/Tdp-logo-main.png" alt="Logo" width="285" height="170">
   </a>
 
-  <h3 align="center">Tdp Netflix Clone App</h3>
+  <h3 align="center">Tdp Geospatial Converter</h3>
   <p align="center">
     A simple geospatial converting service   
     <br />
