@@ -9,9 +9,8 @@
 
   <h3 align="center">Tdp Geospatial Converter</h3>
   <p align="center">
-    A simple geospatial converting service   
-    <br />
-    <a href="https://tdp-techground.info/GeoConvertingService/" target="_blank">View Demo</a>  
+    A simple geospatial converting service  
+   
   </p>
 </p>
 
